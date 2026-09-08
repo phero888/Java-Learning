@@ -1,0 +1,41 @@
+{
+	"nodes":[
+		{"id":"7e76ea391158b182","type":"text","text":"集合","x":-820,"y":-40,"width":80,"height":60},
+		{"id":"09f771ae006f8308","type":"text","text":"List","x":-666,"y":-243,"width":86,"height":60},
+		{"id":"b5eb2fdce8d8abc0","type":"text","text":"Vector","x":-464,"y":-393,"width":111,"height":60},
+		{"id":"82d92ca54a1f3633","type":"text","text":"LinkedList","x":-470,"y":-140,"width":124,"height":60},
+		{"id":"f7b21eb550875e06","type":"text","text":"ArrayList","x":-464,"y":-246,"width":125,"height":60},
+		{"id":"8030f884df9a47e9","type":"text","text":"实现：动态数组","x":-280,"y":-333,"width":160,"height":60},
+		{"id":"8f9360da33da4373","type":"text","text":"自动扩容：\n- vector为2倍\n- ArrayList为1.5倍","x":20,"y":-303,"width":214,"height":117},
+		{"id":"a61a97d160886d9c","type":"text","text":"vector线程安全，synchronized修饰方法\nArrayList非线程安全","x":-46,"y":-600,"width":386,"height":90},
+		{"id":"464090889985e375","type":"text","text":"ArrayList ==转== 线程安全：\n1. 使用 synchronizedList 方法将 ArrayList 包装\n2. 使用 CopyOnWriteArrayList类代替\n3. 使用 vector 类替代","x":94,"y":-480,"width":406,"height":147},
+		{"id":"a28618f68d08d7a9","x":-97,"y":-800,"width":250,"height":147,"type":"text","text":"ArrayList非线程安全体现：\n1. 部分值为null\n2. 索引越界异常\n3. size与add数量不符"},
+		{"id":"a8016ddf4544d4b5","type":"text","text":"多线程：vector线程安全","x":425,"y":-756,"width":250,"height":60},
+		{"id":"6e2c400ba73739a9","type":"text","text":"单线程：ArrayList效率优","x":425,"y":-555,"width":250,"height":50},
+		{"id":"b166f614ee83c833","x":55,"y":-1008,"width":250,"height":60,"color":"1","type":"text","text":"volatile"},
+		{"id":"8b8e7a3a38451ce5","x":347,"y":-975,"width":250,"height":50,"color":"1","type":"text","text":"互斥锁ReentrantLock"},
+		{"id":"8408528fa9b4d293","x":525,"y":-389,"width":300,"height":116,"type":"text","text":"数据结构：数组\n==使用volatile关键字修饰数组==\n写入操作：加互斥锁ReentrantLock\n==灵魂：复制写入=="},
+		{"id":"94d5ac47e950f0c9","x":-740,"y":-503,"width":222,"height":140,"type":"text","text":"List<>中只能填引用类型，不能是基本类型：\n- 两者严格区分\n- 编译后简化为Object"},
+		{"id":"1fa1f4a469bcc717","x":-1040,"y":-363,"width":260,"height":60,"type":"text","text":"数组转List: `Arrays.asList()`\nList转数组：`toArray(T[] a)`"},
+		{"id":"85df5b8a6a2068ba","x":-651,"y":57,"width":71,"height":50,"type":"text","text":"set"}
+	],
+	"edges":[
+		{"id":"82a676fef0f03583","fromNode":"7e76ea391158b182","fromSide":"top","toNode":"09f771ae006f8308","toSide":"left"},
+		{"id":"94d810b88c71c256","fromNode":"09f771ae006f8308","fromSide":"right","toNode":"b5eb2fdce8d8abc0","toSide":"left"},
+		{"id":"6e464f10a1e8d2c5","fromNode":"09f771ae006f8308","fromSide":"right","toNode":"f7b21eb550875e06","toSide":"left"},
+		{"id":"b0c5a67f7b28ddac","fromNode":"09f771ae006f8308","fromSide":"right","toNode":"82d92ca54a1f3633","toSide":"left"},
+		{"id":"e195bb774c0464dd","fromNode":"b5eb2fdce8d8abc0","fromSide":"right","toNode":"8030f884df9a47e9","toSide":"left"},
+		{"id":"44003ab2811dc16c","fromNode":"f7b21eb550875e06","fromSide":"right","toNode":"8030f884df9a47e9","toSide":"left"},
+		{"id":"507210b2684aa872","fromNode":"8030f884df9a47e9","fromSide":"right","toNode":"a61a97d160886d9c","toSide":"left","label":"线程安全性对比"},
+		{"id":"9e3b97e891250812","fromNode":"a61a97d160886d9c","fromSide":"right","toNode":"a8016ddf4544d4b5","toSide":"left"},
+		{"id":"8c6b2540bea23beb","fromNode":"a61a97d160886d9c","fromSide":"right","toNode":"6e2c400ba73739a9","toSide":"left"},
+		{"id":"0205dba62b094105","fromNode":"8030f884df9a47e9","fromSide":"right","toNode":"8f9360da33da4373","toSide":"left","label":"扩容对比"},
+		{"id":"8259c2d080df8247","fromNode":"a61a97d160886d9c","fromSide":"bottom","toNode":"464090889985e375","toSide":"left"},
+		{"id":"892c5e7bfd3dab3e","fromNode":"a61a97d160886d9c","fromSide":"top","toNode":"a28618f68d08d7a9","toSide":"bottom"},
+		{"id":"44f4703da560103d","fromNode":"464090889985e375","fromSide":"right","toNode":"8408528fa9b4d293","toSide":"top","color":"3","label":"CopyonWriteArraylist"},
+		{"id":"b9bb01c9233ea4f5","fromNode":"09f771ae006f8308","fromSide":"top","toNode":"94d5ac47e950f0c9","toSide":"bottom"},
+		{"id":"6485a415cc42ab7a","fromNode":"09f771ae006f8308","fromSide":"top","toNode":"1fa1f4a469bcc717","toSide":"bottom"},
+		{"id":"e6d7ffcc30f0c011","fromNode":"7e76ea391158b182","fromSide":"right","toNode":"85df5b8a6a2068ba","toSide":"left"},
+		{"id":"197f1c11b1c4a52d","fromNode":"09f771ae006f8308","fromSide":"bottom","toNode":"85df5b8a6a2068ba","toSide":"top","fromEnd":"arrow","label":"元素重复？保证有序？"}
+	]
+}
