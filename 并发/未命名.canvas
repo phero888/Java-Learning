@@ -1,0 +1,36 @@
+{
+	"nodes":[
+		{"id":"0da9ee1500cad677","type":"group","x":-440,"y":-540,"width":380,"height":320,"color":"5","label":"内存模型JMM"},
+		{"id":"5f74df58250a1c9f","type":"text","text":"线程","x":-380,"y":-520,"width":50,"height":60,"color":"5"},
+		{"id":"f1fd3e7c6d0aacbe","type":"text","text":"线程","x":-158,"y":-520,"width":50,"height":60,"color":"5"},
+		{"id":"6fa856459f490327","type":"text","text":" 本地内存","x":-191,"y":-420,"width":117,"height":60,"color":"5"},
+		{"id":"cbfa5c29ae9c5235","type":"text","text":" 本地内存","x":-413,"y":-420,"width":119,"height":60,"color":"5"},
+		{"id":"d8450e4c2b0e33f2","type":"text","text":"主内存（共享内存）","x":-332,"y":-300,"width":199,"height":60,"color":"5"},
+		{"id":"29956f47d4da7ab8","type":"text","text":"java线程 VS 操作系统线程\n- 平台线程：一对一\n- 虚拟线程：M：N","x":-413,"y":-80,"width":255,"height":120},
+		{"id":"34dc71437323edfd","type":"text","text":"##### java线程安全\n- 原子性\n- 可见性\n- 有序性","x":-369,"y":140,"width":168,"height":164},
+		{"id":"f6af6952c5ad0c1f","type":"text","text":"##### 创建线程\n1. 继承Thread\n2. 实现Runnable接口：无返回\n3. 实现Callable接口、FutureTask：有返回\n4. 线程池创建","x":-80,"y":480,"width":380,"height":180},
+		{"id":"69f74001eb52aa70","type":"text","text":"##### 停止线程\n- 异常法：发送interrupt()、线程run()内==设置中断即异常==\n- 阻塞中断法：先发送sleep()，再发送interrupt(),==阻塞状态下中断异常==\n- stop()\n- return法：发送interrupt()、线程run()内==设置中断即返回==\n- future.cancel() ≈ interrupt()","x":-103,"y":747,"width":503,"height":233},
+		{"id":"c8be688363595248","type":"text","text":"##### 数据一致性\n- 事务管理ACID\n- 锁\n- 版本控制","x":-560,"y":279,"width":177,"height":163},
+		{"id":"37537397f9239204","type":"text","text":"##### 死锁条件\n- 互斥\n- 不可剥夺\n- 持有并等待\n- 环路等待","x":-162,"y":140,"width":165,"height":180},
+		{"id":"1ac2cede54823b96","type":"text","text":"##### sleep() VS wait()\n- sleep()是*Thread* 静态方法，任何位置调用，不涉及锁，*==释放CPU，不释放锁==*\n- wait()是*Object* 实例方法，涉及锁、同步块内调用，==释放CPU，释放锁==","x":-280,"y":1080,"width":620,"height":140},
+		{"id":"cded5d1c5e77a4dd","type":"text","text":"###### blocked VS waiting\n- blocked：申请锁，锁被占，阻塞至解锁   **被动**\n- waiting：主动释放CPU，不参与锁竞争 **主动**\n- 唤醒：\n\t- blocked：锁释放并成功占有锁\n\t- waiting：显式唤醒（ wait()---notify() )","x":-255,"y":1251,"width":435,"height":209},
+		{"id":"777e360ef319858b","x":480,"y":480,"width":541,"height":238,"type":"text","text":"##### 线程通信\n- volatile：保证线程间数据可见性和有序性\n- synchronized：保证互斥性、可见性 -------搭配wait()、notify()\n- Lock：比synchronized更精细 -------搭配await()、signal()\n- CountDownLatch: 等待其他线程完成操作\n- CyclicBarrier：相互等待线程到达屏障点（屏障点：await())\n- Semaphore: 计数信号量，控制同时访问指定资源线程数量"},
+		{"id":"cc850b28de2e3976","type":"text","text":"`Thread.interrupt()`仅设置线程的中断状态\n==无中断处理---no use==","x":-369,"y":806,"width":218,"height":96},
+		{"id":"f94af5b4d0a79300","x":1220,"y":599,"width":374,"height":165,"type":"text","text":"- 可重入性：同一线程可多次获取同一Lock\n  使用`state`记录\n- （非）公平锁\n- 可中断\n- 多条件：Condition类"},
+		{"id":"0c95a12815fe7f6d","x":612,"y":859,"width":368,"height":221,"type":"text","text":"##### 锁升级\n无锁---偏向锁---轻量级锁---重量级锁"},
+		{"id":"429d2d5926784af3","x":1140,"y":865,"width":414,"height":230,"type":"text","text":"##### synchronized VS ReentrantLock\n- 关键字 VS 类\n- 自动锁 VS 手动锁\n- 非公平锁 VS （非）公平锁\n- 不能响应中断 VS 响应中断\n- JVM实现 VS AQS实现"}
+	],
+	"edges":[
+		{"id":"ac5fdccfea7a23f2","fromNode":"5f74df58250a1c9f","fromSide":"bottom","toNode":"cbfa5c29ae9c5235","toSide":"top","fromEnd":"arrow"},
+		{"id":"382fc86c6e715c40","fromNode":"cbfa5c29ae9c5235","fromSide":"bottom","toNode":"d8450e4c2b0e33f2","toSide":"top","fromEnd":"arrow"},
+		{"id":"2756fadfe1e0a60f","fromNode":"f1fd3e7c6d0aacbe","fromSide":"bottom","toNode":"6fa856459f490327","toSide":"top","fromEnd":"arrow"},
+		{"id":"50ecfb4caa7bcad4","fromNode":"6fa856459f490327","fromSide":"bottom","toNode":"d8450e4c2b0e33f2","toSide":"top","fromEnd":"arrow"},
+		{"id":"8d49ebca5f80d22b","fromNode":"cc850b28de2e3976","fromSide":"right","toNode":"69f74001eb52aa70","toSide":"left"},
+		{"id":"ddd6c5dbb6d5eca1","fromNode":"f6af6952c5ad0c1f","fromSide":"bottom","toNode":"69f74001eb52aa70","toSide":"top"},
+		{"id":"5de7e03954e23b43","fromNode":"f6af6952c5ad0c1f","fromSide":"right","toNode":"777e360ef319858b","toSide":"left"},
+		{"id":"9bb96d6e46b04723","fromNode":"777e360ef319858b","fromSide":"right","toNode":"f94af5b4d0a79300","toSide":"top","label":"ReentrantLock"},
+		{"id":"64466c37198600b5","fromNode":"f94af5b4d0a79300","fromSide":"bottom","toNode":"429d2d5926784af3","toSide":"top"},
+		{"id":"ec9ad617f1cabc63","fromNode":"777e360ef319858b","fromSide":"bottom","toNode":"0c95a12815fe7f6d","toSide":"top","label":"synchronized"},
+		{"id":"5f6d1f4750232687","fromNode":"0c95a12815fe7f6d","fromSide":"right","toNode":"429d2d5926784af3","toSide":"left"}
+	]
+}

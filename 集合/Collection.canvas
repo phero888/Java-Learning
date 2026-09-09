@@ -20,20 +20,22 @@
 		{"id":"1ecea0ddc8481207","type":"text","text":"TreeSet：\n- 自然排序\n- 自定义排序","x":-512,"y":-40,"width":173,"height":110},
 		{"id":"eb0852f06365fe42","type":"text","text":"LinkedHashSet：\n- 自然排序","x":-512,"y":82,"width":192,"height":98},
 		{"id":"4a9c2aa839df8f3e","type":"text","text":"Map","x":-913,"y":390,"width":103,"height":60},
-		{"id":"a3a9f1fe330ece43","type":"text","text":"- 数组+链表\n- 数组+红黑树+链表\n\t- 桶≥8，数组≥64扩容\n\t- 桶≤6退化\n\t- 时间复杂度：O(logn)，查询比AVL慢","x":-280,"y":131,"width":284,"height":200},
+		{"id":"a3a9f1fe330ece43","type":"text","text":"- 数组+链表\n- **数组+红黑树+链表**\n\t- 桶≥8，数组≥64扩容\n\t- 桶≤6退化\n\t- 时间复杂度：O(logn)，查询比AVL慢","x":-280,"y":131,"width":284,"height":200},
 		{"id":"3bb14f7cb6504952","type":"text","text":"集合","x":-1065,"y":171,"width":50,"height":60},
 		{"id":"c033b7e2c2086fcc","type":"text","text":"HashMap","x":-683,"y":301,"width":120,"height":60},
 		{"id":"27e53f420f1544ee","type":"text","text":"TreeMap","x":-683,"y":420,"width":120,"height":50},
 		{"id":"14140f36fabee1b0","type":"text","text":"HashTable","x":-683,"y":520,"width":146,"height":50},
-		{"id":"14264359b3b0c7b5","type":"text","text":"CurrentHashMap","x":-683,"y":620,"width":181,"height":60},
 		{"id":"dd6fa6b54655c896","type":"text","text":"- 链接法、开放寻址法\n- 再哈希法\n- 哈希桶","x":-933,"y":201,"width":233,"height":100},
-		{"id":"25e3ff9deae29205","type":"text","text":"线程安全对比：\n- HashMap非线程安全\n- HashTable线程安全，同步，性能差\n- CurrentHashMap线程安全：CAS+synchronized+Node\n- 补充：Collections.synchronizedMap同步加锁","x":-280,"y":355,"width":348,"height":230},
+		{"id":"25e3ff9deae29205","type":"text","text":"线程安全对比：\n- HashMap非线程安全\n- HashTable线程安全，同步，性能差\n- ConcurrentHashMap线程安全：CAS+synchronized+Node\n- 补充：Collections.synchronizedMap同步加锁","x":-280,"y":355,"width":348,"height":230},
 		{"id":"a9112670d120c072","type":"text","text":"LinkedHashMap","x":-523,"y":271,"width":184,"height":60},
-		{"id":"3eaa8015274d597e","type":"file","file":"hashmap_put().canvas","x":-246,"y":650,"width":373,"height":270},
+		{"id":"3eaa8015274d597e","type":"file","file":"集合/hashmap_put().canvas","x":-246,"y":650,"width":373,"height":270},
 		{"id":"8f9360da33da4373","type":"text","text":"自动扩容：\n- vector为2倍\n- ArrayList为1.5倍","x":40,"y":-246,"width":214,"height":117},
 		{"id":"0792be39fa4ec6bd","type":"text","text":"负载因子：0.75\n扩容: 2倍","x":-976,"y":510,"width":160,"height":60},
-		{"id":"a394b8d0ff971d7a","x":-275,"y":997,"width":315,"height":143,"type":"text","text":"1. 创建新表\n2. 转移数据到新表\n\t- 无需重新计算hash：看hash高一位，0不动，1动"},
-		{"id":"72252385bb730f47","x":-805,"y":873,"width":250,"height":60,"type":"text","text":""}
+		{"id":"a394b8d0ff971d7a","type":"text","text":"1. 创建新表\n2. 转移数据到新表\n\t- 无需重新计算hash：看hash高一位，0不动，1动","x":-275,"y":997,"width":315,"height":143},
+		{"id":"72252385bb730f47","type":"text","text":"- 数组+链表：Segment数组--锁；hashentry--链表\n- **数组+链表/红黑树**：\n\t- 添加：容器空，volatile+CAS初始化；容器不空，计算存储位置空，CAS；计算存储位置不空，synchronized；\n# 对头节点加锁保证线程安全","x":-805,"y":873,"width":459,"height":267},
+		{"id":"14264359b3b0c7b5","type":"text","text":"ConcurrentHashMap","x":-693,"y":725,"width":181,"height":60},
+		{"id":"e24782447b683641","type":"text","text":"**数组+链表**\n所有方法都synchronized：\n单线程操控","x":-740,"y":605,"width":260,"height":90},
+		{"id":"44df93ce1c8e53e9","x":200,"y":360,"width":360,"height":165,"type":"text","text":"\n|                   | key | value |\n| ----------------- | --- | ----- |\n| HashMap           | 1   | n     |\n| HashTable         | no  | no    |\n| ConcurrentHashMap | no  | no    |\n\n"}
 	],
 	"edges":[
 		{"id":"82a676fef0f03583","fromNode":"7e76ea391158b182","fromSide":"top","toNode":"09f771ae006f8308","toSide":"left"},
@@ -70,6 +72,8 @@
 		{"id":"5756bacb4b51393f","fromNode":"c033b7e2c2086fcc","fromSide":"right","toNode":"3eaa8015274d597e","toSide":"left","label":"put()"},
 		{"id":"adb76edcb9de64ed","fromNode":"4a9c2aa839df8f3e","fromSide":"bottom","toNode":"0792be39fa4ec6bd","toSide":"top"},
 		{"id":"42cb6e004c48a075","fromNode":"c033b7e2c2086fcc","fromSide":"right","toNode":"a394b8d0ff971d7a","toSide":"left","label":"resize()"},
-		{"id":"9a40c37f8e1c6747","fromNode":"14264359b3b0c7b5","fromSide":"bottom","toNode":"72252385bb730f47","toSide":"top","label":"实现"}
+		{"id":"9a40c37f8e1c6747","fromNode":"14264359b3b0c7b5","fromSide":"bottom","toNode":"72252385bb730f47","toSide":"top","label":"实现"},
+		{"id":"f714f8c0e2f0342f","fromNode":"14140f36fabee1b0","fromSide":"bottom","toNode":"e24782447b683641","toSide":"top"},
+		{"id":"7d754b890a2b05ff","fromNode":"25e3ff9deae29205","fromSide":"right","toNode":"44df93ce1c8e53e9","toSide":"left","label":"null对比"}
 	]
 }
