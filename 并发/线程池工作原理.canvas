@@ -1,0 +1,25 @@
+{
+	"nodes":[
+		{"id":"838eeaa66d589d61","type":"text","text":"任务提交","x":-304,"y":-274,"width":124,"height":60},
+		{"id":"429bcd6764530c62","type":"text","text":"线程池 live ？","x":-315,"y":-180,"width":146,"height":60},
+		{"id":"f4f447356926a539","type":"text","text":"\\<核心线程数?","x":-313,"y":-50,"width":146,"height":60},
+		{"id":"5b0a629d39a677fb","type":"text","text":"阻塞队列满?","x":-311,"y":70,"width":144,"height":60},
+		{"id":"c467f3e79aa6ea37","type":"text","text":"\\<最大线程数?","x":-311,"y":200,"width":146,"height":60},
+		{"id":"f71b9b91a181fb0e","type":"text","text":"拒绝策略","x":-300,"y":320,"width":117,"height":60},
+		{"id":"1eea01f0606ce4f6","type":"text","text":"拒绝策略","x":-480,"y":70,"width":120,"height":50},
+		{"id":"f640ce790e2a40fe","type":"text","text":"加入阻塞队列","x":-80,"y":70,"width":157,"height":60},
+		{"id":"86d8348bc3ea446c","type":"text","text":"创建线程","x":120,"y":75,"width":123,"height":50}
+	],
+	"edges":[
+		{"id":"90e2ba3e53790ef2","fromNode":"838eeaa66d589d61","fromSide":"bottom","toNode":"429bcd6764530c62","toSide":"top"},
+		{"id":"8483f4ab427c4131","fromNode":"429bcd6764530c62","fromSide":"left","toNode":"1eea01f0606ce4f6","toSide":"top","label":"no"},
+		{"id":"8f72133ffa565d87","fromNode":"429bcd6764530c62","fromSide":"bottom","toNode":"f4f447356926a539","toSide":"top","label":"yes"},
+		{"id":"c97d93574209ec96","fromNode":"f4f447356926a539","fromSide":"bottom","toNode":"5b0a629d39a677fb","toSide":"top","label":"no"},
+		{"id":"28f77b1c4c763ebd","fromNode":"f4f447356926a539","fromSide":"right","toNode":"86d8348bc3ea446c","toSide":"top","label":"yes"},
+		{"id":"fbf97c566a273285","fromNode":"5b0a629d39a677fb","fromSide":"bottom","toNode":"c467f3e79aa6ea37","toSide":"top","label":"yes"},
+		{"id":"b432b36c85df7940","fromNode":"5b0a629d39a677fb","fromSide":"right","toNode":"f640ce790e2a40fe","toSide":"left","label":"no"},
+		{"id":"9bf118c20548eb0e","fromNode":"c467f3e79aa6ea37","fromSide":"bottom","toNode":"f71b9b91a181fb0e","toSide":"top","label":"yes"},
+		{"id":"9e2478b131dbee0e","fromNode":"c467f3e79aa6ea37","fromSide":"right","toNode":"86d8348bc3ea446c","toSide":"bottom","label":"yes"},
+		{"id":"4da84ed62e4b42b1","fromNode":"f71b9b91a181fb0e","fromSide":"left","toNode":"1eea01f0606ce4f6","toSide":"bottom"}
+	]
+}
