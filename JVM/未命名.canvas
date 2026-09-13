@@ -1,1 +1,9 @@
-{}
+{
+	"nodes":[
+		{"id":"8b9fb9fb328d88c0","x":-191,"y":-377,"width":400,"height":400,"type":"group","label":"内存结构"},
+		{"id":"b1afbfbd3939b9d9","x":-130,"y":147,"width":400,"height":400,"type":"group","label":"垃圾回收"},
+		{"id":"32efb578036ec247","x":432,"y":-351,"width":400,"height":400,"type":"group","label":"类加载机制"},
+		{"id":"e8d12a9db16efb40","x":514,"y":204,"width":400,"height":400,"type":"group","label":"内存排查"}
+	],
+	"edges":[]
+}
