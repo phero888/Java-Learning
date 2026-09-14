@@ -1,0 +1,14 @@
+{
+	"nodes":[
+		{"id":"d225a282c5122e2f","type":"text","text":"启动类加载器","x":-388,"y":-473,"width":250,"height":56},
+		{"id":"42a4f64a634aa545","type":"text","text":"扩展类加载器","x":-388,"y":-380,"width":250,"height":56},
+		{"id":"9507d126201df788","type":"text","text":"应用程序类加载器","x":-388,"y":-280,"width":250,"height":56},
+		{"id":"71c79f6a3f81ec3c","type":"text","text":"","x":-400,"y":-200,"width":250,"height":50},
+		{"id":"a3ac942d8a0abbce","type":"text","text":"用户自定义类加载器","x":-388,"y":-180,"width":250,"height":50}
+	],
+	"edges":[
+		{"id":"3ab39c088ba78e62","fromNode":"42a4f64a634aa545","fromSide":"top","toNode":"d225a282c5122e2f","toSide":"bottom"},
+		{"id":"335241ebfdabca60","fromNode":"9507d126201df788","fromSide":"top","toNode":"42a4f64a634aa545","toSide":"bottom"},
+		{"id":"2404294c2cce61c0","fromNode":"a3ac942d8a0abbce","fromSide":"top","toNode":"9507d126201df788","toSide":"bottom"}
+	]
+}
