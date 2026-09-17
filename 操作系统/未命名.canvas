@@ -1,0 +1,38 @@
+{
+	"nodes":[
+		{"id":"7e39e0e2bae89313","type":"group","x":500,"y":-340,"width":1180,"height":740,"label":"进程管理"},
+		{"id":"e270c2de6273a2ad","type":"group","x":520,"y":-280,"width":480,"height":620,"label":"进程"},
+		{"id":"2588e3c2d091a613","type":"group","x":-352,"y":-520,"width":572,"height":453,"label":"用户态、内核态"},
+		{"id":"81025bef1ae82611","type":"group","x":1180,"y":-280,"width":460,"height":400,"label":"线程"},
+		{"id":"26736883a78e65c4","type":"group","x":700,"y":-260,"width":720,"height":150,"label":"VS"},
+		{"id":"6359d54219880ac3","type":"text","text":"同进程 共享代码、数据空间","x":1200,"y":-210,"width":220,"height":50},
+		{"id":"e71f44fab3961f85","type":"text","text":"线程==崩溃==影响进程","x":1200,"y":-160,"width":220,"height":50},
+		{"id":"9911306145cae4fc","type":"text","text":"任务调度和执行的基本单位","x":1200,"y":-260,"width":220,"height":50},
+		{"id":"9844c9de3a3c8cd1","type":"text","text":"##### 内核态 \n所有CPU指令、所有硬件资源\n","x":-40,"y":-354,"width":240,"height":94},
+		{"id":"7c56f7db1c43ead3","type":"text","text":"- 内存管理\n- 进程管理\n- 设备驱动程序控制\n- 系统调用","x":-14,"y":-200,"width":189,"height":113},
+		{"id":"30a7a48b58b53c44","type":"text","text":"- 安全性\n- 稳定性\n- 隔离性","x":-136,"y":-500,"width":122,"height":83},
+		{"id":"215feb08ccfece67","type":"text","text":"##### 用户态 \n部分CPU指令、0硬件资源\n","x":-332,"y":-354,"width":212,"height":94},
+		{"id":"84b81e0e25a12b22","type":"file","file":"进程状态机.canvas","x":540,"y":-260,"width":140,"height":75},
+		{"id":"6758ce383b34240e","type":"text","text":"##### 进程上下文\n- 虚拟内存、栈、变量\n- 内核堆栈、寄存器……","x":540,"y":-160,"width":140,"height":237},
+		{"id":"94471957d23f4a4e","type":"text","text":"线程切换\n1. 保存上下文\n2. 切换到调度器\n3. 恢复上下文\n4. 执行新线程","x":1200,"y":-93,"width":164,"height":170},
+		{"id":"665733eeb542ec32","type":"text","text":"##### CPU上下文\n- CPU寄存器\n- CPU PC","x":1020,"y":-91,"width":150,"height":100},
+		{"id":"d4733445bd262b52","type":"text","text":"##### 进程通讯\n- 管道pipe：无格式字节流\n- 消息队列：消息体、==用户-内核copy==\n- 共享内存：no copy最快、竞争\n- 信号量：控制共享资源==互斥==、PV\n- 信号：应用进程-内核交互\n- socket：\n\t- 不同主机通信-UDP/TCP\n\t- 本地进程间通信","x":700,"y":-101,"width":280,"height":281},
+		{"id":"b75e305984a5b093","type":"text","text":"(子)进程==崩溃==不影响(父)进程","x":760,"y":-160,"width":200,"height":50},
+		{"id":"620c14e1d976ce4f","type":"text","text":"资源分配的基本单位","x":700,"y":-260,"width":280,"height":50},
+		{"id":"e8de96edcaba9488","type":"text","text":"独立代码、数据空间  ----切换开销","x":700,"y":-210,"width":280,"height":50},
+		{"id":"fee1ca711a836b38","type":"text","text":"(子)进程==崩溃==不影响(父)进程","x":700,"y":-160,"width":280,"height":50},
+		{"id":"eebc4ee11aa35e46","x":1440,"y":-260,"width":180,"height":200,"type":"text","text":"##### 线程通讯\n- 互斥锁\n- 条件变量\n- 自旋锁：CAS\n- 读写锁\n- 信号量：PV"}
+	],
+	"edges":[
+		{"id":"03afdaadf14d22e1","fromNode":"215feb08ccfece67","fromSide":"right","toNode":"9844c9de3a3c8cd1","toSide":"left","fromEnd":"arrow","label":"vs"},
+		{"id":"b9a79a975d6fbeba","fromNode":"9844c9de3a3c8cd1","fromSide":"bottom","toNode":"7c56f7db1c43ead3","toSide":"top"},
+		{"id":"60e132d74476bc79","fromNode":"215feb08ccfece67","fromSide":"top","toNode":"30a7a48b58b53c44","toSide":"bottom"},
+		{"id":"1fe0fe5d34b30abd","fromNode":"9844c9de3a3c8cd1","fromSide":"top","toNode":"30a7a48b58b53c44","toSide":"bottom"},
+		{"id":"de57cf5ef7cbb4d9","fromNode":"7c56f7db1c43ead3","fromSide":"right","toNode":"7e39e0e2bae89313","toSide":"left"},
+		{"id":"63dc7ca54d8b0c33","fromNode":"620c14e1d976ce4f","fromSide":"right","toNode":"9911306145cae4fc","toSide":"left","fromEnd":"arrow","label":"本质区别"},
+		{"id":"4ea67a0ccc76758a","fromNode":"6359d54219880ac3","fromSide":"left","toNode":"e8de96edcaba9488","toSide":"right","fromEnd":"arrow","label":"内存分配、开销"},
+		{"id":"8f160df1c68d0e8c","fromNode":"b75e305984a5b093","fromSide":"right","toNode":"e71f44fab3961f85","toSide":"left","fromEnd":"arrow","label":"稳定性"},
+		{"id":"aecebfac54e8d132","fromNode":"665733eeb542ec32","fromSide":"left","toNode":"6758ce383b34240e","toSide":"right","color":"3"},
+		{"id":"444ae8578c88ff6c","fromNode":"665733eeb542ec32","fromSide":"right","toNode":"94471957d23f4a4e","toSide":"left","color":"3"}
+	]
+}
