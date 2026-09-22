@@ -12,7 +12,7 @@
 		{"id":"7c56f7db1c43ead3","type":"text","text":"- 内存管理\n- 进程管理\n- 设备驱动程序控制\n- 系统调用","x":-14,"y":-200,"width":189,"height":113},
 		{"id":"30a7a48b58b53c44","type":"text","text":"- 安全性\n- 稳定性\n- 隔离性","x":-136,"y":-500,"width":122,"height":83},
 		{"id":"215feb08ccfece67","type":"text","text":"##### 用户态 \n部分CPU指令、0硬件资源\n","x":-332,"y":-354,"width":212,"height":94},
-		{"id":"84b81e0e25a12b22","type":"file","file":"进程状态机.canvas","x":540,"y":-260,"width":140,"height":75},
+		{"id":"84b81e0e25a12b22","type":"file","file":"操作系统/进程状态机.canvas","x":540,"y":-260,"width":140,"height":75},
 		{"id":"6758ce383b34240e","type":"text","text":"##### 进程上下文\n- 虚拟内存、栈、变量\n- 内核堆栈、寄存器……","x":540,"y":-160,"width":140,"height":237},
 		{"id":"94471957d23f4a4e","type":"text","text":"线程切换\n1. 保存上下文\n2. 切换到调度器\n3. 恢复上下文\n4. 执行新线程","x":1200,"y":-93,"width":164,"height":170},
 		{"id":"665733eeb542ec32","type":"text","text":"##### CPU上下文\n- CPU寄存器\n- CPU PC","x":1020,"y":-91,"width":150,"height":100},
