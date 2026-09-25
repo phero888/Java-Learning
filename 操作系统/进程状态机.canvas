@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"a07ff639a30e23ae","type":"text","text":"运行状态","x":-154,"y":-580,"width":74,"height":60},
+		{"id":"84d62d7d26125aad","type":"text","text":"就绪状态","x":-280,"y":-380,"width":74,"height":60},
+		{"id":"ef45978c3f82e5f7","type":"text","text":"创建状态","x":-400,"y":-580,"width":74,"height":60},
+		{"id":"3c084c7fc201eed5","type":"text","text":"阻塞状态","x":0,"y":-380,"width":74,"height":60},
+		{"id":"8572743c7cb28268","type":"text","text":"结束状态","x":100,"y":-580,"width":74,"height":60}
+	],
+	"edges":[
+		{"id":"6a77989ea819d3e6","fromNode":"ef45978c3f82e5f7","fromSide":"bottom","toNode":"84d62d7d26125aad","toSide":"left"},
+		{"id":"9a2831e5cd3fa13d","fromNode":"84d62d7d26125aad","fromSide":"top","toNode":"a07ff639a30e23ae","toSide":"left"},
+		{"id":"8dfd97c20231e96f","fromNode":"a07ff639a30e23ae","fromSide":"bottom","toNode":"84d62d7d26125aad","toSide":"right","label":"时间片用完"},
+		{"id":"46bbd9c7271b6de8","fromNode":"a07ff639a30e23ae","fromSide":"right","toNode":"3c084c7fc201eed5","toSide":"top","label":"等待\n事件"},
+		{"id":"759efd7d59007b91","fromNode":"3c084c7fc201eed5","fromSide":"left","toNode":"84d62d7d26125aad","toSide":"right"},
+		{"id":"0032ff0b1dd9ea6e","fromNode":"a07ff639a30e23ae","fromSide":"right","toNode":"8572743c7cb28268","toSide":"left"}
+	]
+}
