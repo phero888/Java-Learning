@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"id":"e287c0f146f80ab6","x":-195,"y":-364,"width":101,"height":180,"type":"text","text":"###### 数据类型\n- string\n- hash\n- list\n- set\n- zset"},
+		{"id":"61dbad4b1f4cca49","x":-168,"y":-71,"width":61,"height":50,"type":"text","text":"###### ZSet"},
+		{"id":"18137ed1670bf95b","x":-7,"y":-66,"width":456,"height":197,"type":"text","text":">参数顺序: `set_name score(start end) ob_name WITHSCORE`\n- `ZADD` 向集合添加元素\n- `ZINCRBY` 增加分数\n- `ZSCORE` 查看分数\n- `ZREVRANGE start end`  倒序获取指定排名元素\n- `ZRANGEBYSCORE` 升序获取分数区间对象"},
+		{"id":"0ec61ae27ce6320b","x":-301,"y":117,"width":162,"height":50,"type":"text","text":"ziplist/skiplist"},
+		{"id":"17272d2d5c6e126a","x":-302,"y":269,"width":218,"height":122,"type":"text","text":"skiplist VS B+ tree\n- ==内存 VS 磁盘== ---I/O\n- 实现复杂度/维护\n- 写入: 局部性 VS 页分裂"},
+		{"id":"aaef3fb7d48b0d77","x":-6,"y":-300,"width":63,"height":50,"type":"text","text":"##### Hash"},
+		{"id":"a621e7dee0a604b6","x":130,"y":-511,"width":250,"height":60,"type":"text","text":""}
+	],
+	"edges":[
+		{"id":"59358eecdbd5ca49","fromNode":"e287c0f146f80ab6","fromSide":"bottom","toNode":"61dbad4b1f4cca49","toSide":"top","label":"有序,唯一"},
+		{"id":"f32d6281922a8ec5","fromNode":"61dbad4b1f4cca49","fromSide":"right","toNode":"18137ed1670bf95b","toSide":"left","label":"命令"},
+		{"id":"09ae7379f15a6abe","fromNode":"61dbad4b1f4cca49","fromSide":"bottom","toNode":"0ec61ae27ce6320b","toSide":"top","label":"底层实现"},
+		{"id":"33bf7b441ca7514f","fromNode":"0ec61ae27ce6320b","fromSide":"bottom","toNode":"17272d2d5c6e126a","toSide":"top"},
+		{"id":"ac4e1c15eb142eb8","fromNode":"e287c0f146f80ab6","fromSide":"right","toNode":"aaef3fb7d48b0d77","toSide":"left"},
+		{"id":"5fe16bcc8d954583","fromNode":"aaef3fb7d48b0d77","fromSide":"top","toNode":"a621e7dee0a604b6","toSide":"bottom","label":"扩容"}
+	]
+}
