@@ -1,12 +1,20 @@
 {
 	"nodes":[
-		{"id":"e287c0f146f80ab6","x":-195,"y":-364,"width":101,"height":180,"type":"text","text":"###### 数据类型\n- string\n- hash\n- list\n- set\n- zset"},
-		{"id":"61dbad4b1f4cca49","x":-168,"y":-71,"width":61,"height":50,"type":"text","text":"###### ZSet"},
-		{"id":"18137ed1670bf95b","x":-7,"y":-66,"width":456,"height":197,"type":"text","text":">参数顺序: `set_name score(start end) ob_name WITHSCORE`\n- `ZADD` 向集合添加元素\n- `ZINCRBY` 增加分数\n- `ZSCORE` 查看分数\n- `ZREVRANGE start end`  倒序获取指定排名元素\n- `ZRANGEBYSCORE` 升序获取分数区间对象"},
-		{"id":"0ec61ae27ce6320b","x":-301,"y":117,"width":162,"height":50,"type":"text","text":"ziplist/skiplist"},
-		{"id":"17272d2d5c6e126a","x":-302,"y":269,"width":218,"height":122,"type":"text","text":"skiplist VS B+ tree\n- ==内存 VS 磁盘== ---I/O\n- 实现复杂度/维护\n- 写入: 局部性 VS 页分裂"},
-		{"id":"aaef3fb7d48b0d77","x":-6,"y":-300,"width":63,"height":50,"type":"text","text":"##### Hash"},
-		{"id":"a621e7dee0a604b6","x":130,"y":-511,"width":250,"height":60,"type":"text","text":""}
+		{"id":"e287c0f146f80ab6","type":"text","text":"###### 数据类型\n- string\n- hash\n- list\n- set\n- zset","x":-195,"y":-364,"width":101,"height":180},
+		{"id":"61dbad4b1f4cca49","type":"text","text":"###### ZSet","x":-168,"y":-71,"width":61,"height":50},
+		{"id":"18137ed1670bf95b","type":"text","text":">参数顺序: `set_name score(start end) ob_name WITHSCORE`\n- `ZADD` 向集合添加元素\n- `ZINCRBY` 增加分数\n- `ZSCORE` 查看分数\n- `ZREVRANGE start end`  倒序获取指定排名元素\n- `ZRANGEBYSCORE` 升序获取分数区间对象","x":-7,"y":-66,"width":456,"height":197},
+		{"id":"0ec61ae27ce6320b","type":"text","text":"ziplist/skiplist","x":-301,"y":117,"width":162,"height":50},
+		{"id":"17272d2d5c6e126a","type":"text","text":"skiplist VS B+ tree\n- ==内存 VS 磁盘== ---I/O\n- 实现复杂度/维护\n- 写入: 局部性 VS 页分裂","x":-302,"y":269,"width":218,"height":122},
+		{"id":"aaef3fb7d48b0d77","type":"text","text":"##### Hash","x":-6,"y":-300,"width":63,"height":50},
+		{"id":"8a39f4a91e7abd69","x":-278,"y":-495,"width":81,"height":50,"type":"text","text":"##### string"},
+		{"id":"dc3ef600b17981cc","x":-366,"y":-749,"width":100,"height":154,"type":"text","text":"##### SDS\n- len\n- alloc\n- flags\n- `buf[]`"},
+		{"id":"3d68569c217d1454","x":-128,"y":-802,"width":189,"height":96,"type":"text","text":"- O(1)获取长度\n- 二进制安全 \"\\0\"\n- 无缓冲区溢出"},
+		{"id":"a621e7dee0a604b6","type":"text","text":"初始: 2 hash; hash2 未分配内存\n**refresh**\n1. 给hash2分配空间  \\*2\n2. 迁移数据 hash1 -> hash2\n   迁移同时==**处理新请求**==\n\t- del/sel/upd -> hash1,hash2\n\t- ins -> hash2\n3. 释放hash1 空间\n4. hash2 => hash1","x":70,"y":-625,"width":328,"height":249},
+		{"id":"67787204264d61c8","x":-456,"y":-94,"width":159,"height":116,"type":"text","text":"- 排行榜\n- 延迟任务队列\n- 范围查询\n- 权重消息队列"},
+		{"id":"a91f61298eee4c31","x":-605,"y":-305,"width":112,"height":62,"type":"text","text":"# redis"},
+		{"id":"ec39761964a0c436","x":-774,"y":-180,"width":205,"height":197,"type":"text","text":"##### 单线程\n>网络I/O 和 执行命令\n\n接收客户端请求->解析请求 ->进行数据读写等操作->发送数据给客户端"},
+		{"id":"6b4205a2f24d772a","x":-624,"y":89,"width":182,"height":141,"type":"text","text":"##### 后台线程\n- 处理关闭文件\n- AOF\n- 释放redis内存"},
+		{"id":"12c1766fb295a22e","x":-969,"y":-174,"width":113,"height":56,"type":"text","text":"多I/O线程"}
 	],
 	"edges":[
 		{"id":"59358eecdbd5ca49","fromNode":"e287c0f146f80ab6","fromSide":"bottom","toNode":"61dbad4b1f4cca49","toSide":"top","label":"有序,唯一"},
@@ -14,6 +22,14 @@
 		{"id":"09ae7379f15a6abe","fromNode":"61dbad4b1f4cca49","fromSide":"bottom","toNode":"0ec61ae27ce6320b","toSide":"top","label":"底层实现"},
 		{"id":"33bf7b441ca7514f","fromNode":"0ec61ae27ce6320b","fromSide":"bottom","toNode":"17272d2d5c6e126a","toSide":"top"},
 		{"id":"ac4e1c15eb142eb8","fromNode":"e287c0f146f80ab6","fromSide":"right","toNode":"aaef3fb7d48b0d77","toSide":"left"},
-		{"id":"5fe16bcc8d954583","fromNode":"aaef3fb7d48b0d77","fromSide":"top","toNode":"a621e7dee0a604b6","toSide":"bottom","label":"扩容"}
+		{"id":"5fe16bcc8d954583","fromNode":"aaef3fb7d48b0d77","fromSide":"top","toNode":"a621e7dee0a604b6","toSide":"bottom","label":"扩容"},
+		{"id":"876a76505afaa0b8","fromNode":"e287c0f146f80ab6","fromSide":"top","toNode":"8a39f4a91e7abd69","toSide":"bottom"},
+		{"id":"9c6bde28f998a108","fromNode":"8a39f4a91e7abd69","fromSide":"top","toNode":"dc3ef600b17981cc","toSide":"bottom","label":"底层实现"},
+		{"id":"1b443743844f8ca8","fromNode":"dc3ef600b17981cc","fromSide":"right","toNode":"3d68569c217d1454","toSide":"left","label":"VS string"},
+		{"id":"da3f03dafca036b9","fromNode":"61dbad4b1f4cca49","fromSide":"left","toNode":"67787204264d61c8","toSide":"right","label":"应用"},
+		{"id":"7a8832554cb9757b","fromNode":"a91f61298eee4c31","fromSide":"right","toNode":"e287c0f146f80ab6","toSide":"left"},
+		{"id":"d5ced6b068b55aa7","fromNode":"a91f61298eee4c31","fromSide":"bottom","toNode":"ec39761964a0c436","toSide":"top"},
+		{"id":"cf3c787d7ab2ce18","fromNode":"ec39761964a0c436","fromSide":"bottom","toNode":"6b4205a2f24d772a","toSide":"top"},
+		{"id":"5f077a993b34b60a","fromNode":"ec39761964a0c436","fromSide":"left","toNode":"12c1766fb295a22e","toSide":"right"}
 	]
 }
