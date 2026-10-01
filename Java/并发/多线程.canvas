@@ -24,7 +24,7 @@
 		{"id":"0c95a12815fe7f6d","type":"text","text":"##### 锁升级\n无锁：没有线程占有 *对象*   |  锁标记：01 偏向：0\n偏向锁：长期只有一个线程占有 *对象*   |  偏向：1    Mark Word 记录 该线程id\n轻量级锁：多个线程可能占用 *对象*，未占有对象的线程开始自旋  |  锁标记：00 偏向：0   线程尝试CAS更新Mark Word指针指向锁 ->成功，获取锁，失败-> 自旋\n重量级锁：自旋过长、==真正产生竞争==  |  锁标记：10      ==*synchronized*== -> 竞争、阻塞、唤醒","x":-252,"y":1460,"width":700,"height":221},
 		{"id":"777e360ef319858b","type":"text","text":"##### 线程通信\n- volatile：保证线程间数据可见性和有序性\n- synchronized：保证互斥性、可见性 -------搭配wait()、notify()\n- Lock：比synchronized更精细 -------搭配await()、signal()\n- CountDownLatch: 等待其他线程完成操作\n- CyclicBarrier：相互等待线程到达屏障点（屏障点：await())\n- Semaphore: 计数信号量，控制同时访问指定资源线程数量","x":-192,"y":1100,"width":541,"height":238},
 		{"id":"f6af6952c5ad0c1f","type":"text","text":"##### 创建线程\n1. 继承Thread\n2. 实现Runnable接口：无返回\n3. 实现Callable接口、FutureTask：有返回\n4. 线程池创建","x":-752,"y":1100,"width":380,"height":180},
-		{"id":"e130b9f111e0c092","type":"file","file":"并发/线程池工作原理.canvas","x":798,"y":-520,"width":200,"height":200},
+		{"id":"e130b9f111e0c092","type":"file","file":"Java/并发/线程池工作原理.canvas","x":798,"y":-520,"width":200,"height":200},
 		{"id":"c7a06b4e716b134c","type":"text","text":"- CallerRunsPolicy：线程池调用者执行任务\n- AbortPolicy: 抛拒绝异常\n- DiscardPolicy: 静默拒绝\n- DiscardOldestPolicy：抛弃队头任务，重新提交\n- 自定义","x":1116,"y":-80,"width":432,"height":200},
 		{"id":"834b77d3b30c5c05","type":"text","text":"##### 创建线程池\n- `Executors`工具类：简单、不可控 `Executors.newFixedThreadPool(3);`\n- `TheadPoolExecutor`类：复杂、可控","x":368,"y":-60,"width":357,"height":180},
 		{"id":"a8d00bd868b4c53d","type":"text","text":"线程池 VS *多个线程*\n- **资源复用，降低开销**\n- **控制并发强度，避免资源耗尽**\n- **任务管理更灵活**","x":1116,"y":600,"width":284,"height":160},

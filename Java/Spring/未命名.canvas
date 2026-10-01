@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"d0a3db49467f9b47","type":"text","text":"##### AOP\n>面向切面编程，将独立于业务逻辑的代码剥离，模块化\n\n**--- 动态代理**：\n1. 对象类实现==*接口*==  <--- JDK 生成代理类实现==*接口*==，\n   调用代理类接口方法 = 调用对象类接口方法\n   --------- 基于接口的代理\n2. 对象类没有实现接口： CGLIB ==生成对象类的子类==作为代理\n   --------- 基于类的代理\n\n- Advice：要插入的代码、插入位置     ---方法\n- Join Point：可插入的位置\n- PointCut：插入的位置  \n- Aspect：切面       ---类","x":-640,"y":-500,"width":440,"height":360,"color":"3"},
+		{"id":"676e82edbdff5743","type":"text","text":"##### IoC\n>控制反转，将创建对象、对象间的依赖关系管理交给IoC容器\n\n**--- 反射、DI、容器实现、工厂模式**\n\nDI：注解注入、构造器注入、setter注入\n\n三级缓存：\n1. 成品Bean缓存\n2. 半成品bean缓存\n3. 工厂缓存\n","x":-80,"y":-500,"width":313,"height":349,"color":"3"},
+		{"id":"c637a725ab1920f5","type":"text","text":"##### SpringBoot\n框架 --- 快速开发、快速启动\n内嵌服务器 ---- 简化部署\n自动配置  ---- ","x":-293,"y":-1017,"width":250,"height":132},
+		{"id":"96607309080a4bdd","type":"text","text":"##### 启动\n- `@SpringBootApplication`:项目启动类注解\n\t- `@SpringBootConfiguration`:配置类\n\t- `EnableAutoConfiguration`:自动配置\n\t- `CompomentScan`:扫描Bean\n- `SpringApplication.run(...)`\n\t- 注册Bean：自动配置类 -> 自定义配置类\n\t- 实例化Bean：无依赖Bean ->有依赖Bean","x":-324,"y":-847,"width":347,"height":272},
+		{"id":"097ca486116bb0a8","type":"text","text":"##### 事务\n`@Transactional`","x":94,"y":-847,"width":139,"height":92},
+		{"id":"d420abc30df2f417","type":"text","text":"`@RestController` = `@controller` + `@ResponseBody`","x":-773,"y":-872,"width":373,"height":50}
+	],
+	"edges":[]
+}
