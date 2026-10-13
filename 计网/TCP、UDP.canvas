@@ -1,0 +1,28 @@
+{
+	"nodes":[
+		{"id":"acdcbf31627af7af","x":-380,"y":-300,"width":500,"height":430,"type":"group","label":"TCP握手"},
+		{"id":"1ddc9ed98074a609","type":"group","x":-200,"y":-280,"width":160,"height":390},
+		{"id":"a5e975125edc81d5","x":-245,"y":160,"width":251,"height":196,"type":"group","label":"超时重传"},
+		{"id":"4af1460f549b7816","type":"text","text":"服务端","x":40,"y":-280,"width":60,"height":390},
+		{"id":"9255ab4a216c7368","type":"text","text":"客户端","x":-360,"y":-280,"width":60,"height":390},
+		{"id":"31c8d9c24e437655","type":"text","text":"SYN = 1\nseq = x","x":-180,"y":-260,"width":120,"height":80},
+		{"id":"714e9d49d598fdb4","type":"text","text":"SYN = 1\nACK = 1\nseq = y\nack = x+1","x":-180,"y":-136,"width":120,"height":112},
+		{"id":"22c5f696fda5637b","type":"text","text":"ACK = 1\nack = y+1","x":-180,"y":20,"width":120,"height":61},
+		{"id":"293c185979ceed44","x":-225,"y":180,"width":211,"height":50,"type":"text","text":"- 丢包后，触发重传第二次报文\n"},
+		{"id":"3859a17b78dc8484","type":"text","text":"- 每次超时等待两倍时间再次重试，重试两次后再超时，断开连接","x":-225,"y":260,"width":211,"height":76},
+		{"id":"41d8e119d7b0d53c","x":180,"y":-85,"width":193,"height":151,"type":"text","text":"###### 为什么是三次\n- 防止初始化历史连接\n- 同步序列号\n- 避免资源浪费"}
+	],
+	"edges":[
+		{"id":"e14426689b0f05a5","fromNode":"9255ab4a216c7368","fromSide":"right","toNode":"31c8d9c24e437655","toSide":"left","color":"3"},
+		{"id":"6201e64e7ea813c6","fromNode":"31c8d9c24e437655","fromSide":"right","toNode":"4af1460f549b7816","toSide":"left","color":"3"},
+		{"id":"a749c5d52ed0426b","fromNode":"4af1460f549b7816","fromSide":"left","toNode":"714e9d49d598fdb4","toSide":"right","color":"2"},
+		{"id":"f689acb25a378551","fromNode":"714e9d49d598fdb4","fromSide":"left","toNode":"9255ab4a216c7368","toSide":"right","color":"2"},
+		{"id":"2b5fb95e78b7ee74","fromNode":"9255ab4a216c7368","fromSide":"right","toNode":"22c5f696fda5637b","toSide":"left","color":"4"},
+		{"id":"cbc6f8124766e2ff","fromNode":"22c5f696fda5637b","fromSide":"right","toNode":"4af1460f549b7816","toSide":"left","color":"4"},
+		{"id":"9d40a739c06aa482","fromNode":"22c5f696fda5637b","fromSide":"bottom","toNode":"a5e975125edc81d5","toSide":"top","color":"5"},
+		{"id":"1e7ca710adfff744","fromNode":"a5e975125edc81d5","fromSide":"right","toNode":"714e9d49d598fdb4","toSide":"right","color":"5"},
+		{"id":"cc36fe7b336c9d31","fromNode":"31c8d9c24e437655","fromSide":"left","toNode":"a5e975125edc81d5","toSide":"left","color":"6"},
+		{"id":"75452b87b9421e7f","fromNode":"a5e975125edc81d5","fromSide":"right","toNode":"31c8d9c24e437655","toSide":"right","color":"6"},
+		{"id":"92c39c11c5288abf","fromNode":"acdcbf31627af7af","fromSide":"right","toNode":"41d8e119d7b0d53c","toSide":"left"}
+	]
+}
